@@ -1,0 +1,499 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio profissional de Taz Bula-Bula, Engenheiro de Telecomunicações e Full-Stack Developer.">
+    <meta name="theme-color" content="#0a1628">
+    <title>Taz Bula-Bula | Eng. Telecomunicações & Full-Stack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0a1628]/90 backdrop-blur-sm border-b border-[#1a3a5c]">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#top" class="text-2xl font-bold text-[#4a9eff] tracking-tight">
+                TB<span class="text-white">.</span>
+            </a>
+
+            <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+                <li><a href="#sobre" class="hover:text-[#4a9eff] transition">Sobre</a></li>
+                <li><a href="#habilidades" class="hover:text-[#4a9eff] transition">Habilidades</a></li>
+                <li><a href="#projetos" class="hover:text-[#4a9eff] transition">Projetos</a></li>
+                <li><a href="#experiencia" class="hover:text-[#4a9eff] transition">Experiência</a></li>
+                <li><a href="#contato" class="hover:text-[#4a9eff] transition">Contato</a></li>
+            </ul>
+
+            <a href="#contato" class="hidden md:block px-6 py-2 bg-[#2d7dd2] text-white rounded-lg text-sm font-medium hover:bg-[#4a9eff] transition">
+                Vamos Conversar
+            </a>
+
+            <button id="menu-btn" class="md:hidden text-white text-2xl" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0a1628] border-t border-[#1a3a5c] px-6 py-4">
+            <ul class="flex flex-col gap-4 text-gray-300">
+                <li><a href="#sobre" class="hover:text-[#4a9eff] transition">Sobre</a></li>
+                <li><a href="#habilidades" class="hover:text-[#4a9eff] transition">Habilidades</a></li>
+                <li><a href="#projetos" class="hover:text-[#4a9eff] transition">Projetos</a></li>
+                <li><a href="#experiencia" class="hover:text-[#4a9eff] transition">Experiência</a></li>
+                <li><a href="#contato" class="hover:text-[#4a9eff] transition">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-50 w-12 h-12 bg-[#2d7dd2] text-white rounded-full shadow-lg shadow-[#2d7dd2]/30 hover:bg-[#4a9eff] transition-all duration-300 hover:scale-110">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <main id="top">
+        <section class="min-h-screen flex items-center bg-[#0a1628] pt-20 overflow-hidden hero-bg-gradient relative">
+            <div class="orb orb-one"></div>
+            <div class="orb orb-two"></div>
+
+            <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center relative z-10">
+                <div data-animate="fade-up">
+                    <span class="section-tag mb-6">Eng. Telecomunicações & Full-Stack</span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight glitch-text" data-text="Taz Bula-Bula">
+                        Taz <span class="text-[#4a9eff]">Bula-Bula</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 mt-5 max-w-lg typewriter">
+                        Desenvolvo soluções digitais e de infraestrutura que unem tecnologia, segurança e performance.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <a href="#projetos" class="btn-primary px-8 py-3">Ver Projetos</a>
+                        <a href="#contato" class="btn-secondary px-8 py-3">Contato</a>
+                    </div>
+
+                    <div class="flex gap-4 mt-8">
+                        <a href="https://github.com/tazbulabula" target="_blank" class="social-icon" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://wa.me/244921351606" target="_blank" class="social-icon" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:tazcmanongobulabula@gmail.com" class="social-icon" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex justify-center relative" data-animate="fade-up" data-delay="200">
+                    <div class="w-72 h-72 rounded-full bg-gradient-to-br from-[#2d7dd2] via-[#4a9eff] to-[#0a1628] flex items-center justify-center border-4 border-[#2d7dd2] shadow-[0_0_40px_rgba(74,158,255,0.25)] animate-float relative overflow-hidden">
+                        <div class="absolute inset-6 rounded-full border border-white/10"></div>
+                        <img src="assets/images/perfil.jpg" alt="Taz Bula-Bula" class=" w-[95%] h-[95%] object-cover rounded-full">
+                    </div>
+                    <div class="absolute -top-4 -right-4 w-16 h-16 bg-[#2d7dd2]/20 rounded-full animate-ping-slow"></div>
+                    <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-[#4a9eff]/20 rounded-full animate-pulse-slow"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="py-20 bg-[#0f1f3a]">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4" data-animate="fade-up">
+                    Sobre <span class="text-[#4a9eff]">Mim</span>
+                </h2>
+                <p class="text-gray-400 text-center max-w-2xl mx-auto mb-12" data-animate="fade-up" data-delay="100">
+                    Desenvolvo com visão técnica, pensada em produto, infraestrutura e resultados claros para negócios e pessoas.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-animate="fade-up" data-delay="200">
+                        <h3 class="text-2xl font-bold text-white mb-4">Engenheiro & Desenvolvedor</h3>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            Sou um profissional apaixonado por tecnologia, com experiência em desenvolvimento full-stack, telecomunicações e infraestrutura de redes.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Minha abordagem combina engenharia, segurança e boa experiência de uso, criando soluções que entregam valor real, escalabilidade e confiabilidade.
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-4 mt-6">
+                            <div class="bg-[#1a3a5c] p-4 rounded-xl text-center card-glow border border-[#2d7dd2]/15">
+                                <span class="text-2xl font-bold text-[#4a9eff] counter" data-target="5" data-suffix="+">0+</span>
+                                <p class="text-sm text-gray-400 mt-2">Projetos entregues</p>
+                            </div>
+                            <div class="bg-[#1a3a5c] p-4 rounded-xl text-center card-glow border border-[#2d7dd2]/15">
+                                <span class="text-2xl font-bold text-[#4a9eff] counter" data-target="85" data-suffix="%">0%</span>
+                                <p class="text-sm text-gray-400 mt-2">Cobertura de testes</p>
+                            </div>
+                            <div class="bg-[#1a3a5c] p-4 rounded-xl text-center card-glow border border-[#2d7dd2]/15">
+                                <span class="text-2xl font-bold text-[#4a9eff] counter" data-target="99" data-suffix=".9%">0%</span>
+                                <p class="text-sm text-gray-400 mt-2">Uptime de redes</p>
+                            </div>
+                            <div class="bg-[#1a3a5c] p-4 rounded-xl text-center card-glow border border-[#2d7dd2]/15">
+                                <span class="text-2xl font-bold text-[#4a9eff] counter" data-target="90" data-suffix="%">0%</span>
+                                <p class="text-sm text-gray-400 mt-2">Redução de ameaças</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#1a3a5c] p-8 rounded-2xl border border-[#2d7dd2]/30 card-glow" data-animate="fade-up" data-delay="300">
+                        <h4 class="text-[#4a9eff] font-semibold mb-3">🎯 Resumo Profissional</h4>
+                        <p class="text-gray-300 leading-relaxed">
+                            Desenvolvedor Full-Stack com experiência em Laravel, React.js e FastAPI, aliado a competências em infraestrutura de redes e telecomunicações. Capaz de entregar soluções completas, escaláveis e seguras, com forte atuação em projetos de inteligência artificial, integrações e sistemas críticos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="py-20 bg-[#0a1628]">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4" data-animate="fade-up">
+                    Minhas <span class="text-[#4a9eff]">Habilidades</span>
+                </h2>
+                <p class="text-gray-400 text-center max-w-2xl mx-auto mb-12" data-animate="fade-up" data-delay="100">
+                    Tecnologias e ferramentas que utilizo no dia a dia para criar soluções robustas e bem estruturadas.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-[#1a3a5c] p-6 rounded-2xl border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="100">
+                        <div class="text-4xl mb-4">💻</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Frontend</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">HTML</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">CSS</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">Tailwind</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">React.js</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#1a3a5c] p-6 rounded-2xl border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="200">
+                        <div class="text-4xl mb-4">⚙️</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Backend</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">PHP</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">Python</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">Laravel</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">FastAPI</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#1a3a5c] p-6 rounded-2xl border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="300">
+                        <div class="text-4xl mb-4">☁️</div>
+                        <h3 class="text-xl font-bold text-white mb-3">DevOps & Banco</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">Docker</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">CI/CD</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">MySQL</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">SQLite</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#1a3a5c] p-6 rounded-2xl border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="400">
+                        <div class="text-4xl mb-4">🧠</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Machine Learning</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">PyTorch</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">IA</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#1a3a5c] p-6 rounded-2xl border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="500">
+                        <div class="text-4xl mb-4">🌐</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Redes</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">IP/VLANs</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">QoS</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">Roteamento</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">CISCO</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#1a3a5c] p-6 rounded-2xl border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="600">
+                        <div class="text-4xl mb-4">🧪</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Testes & QA</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">PHPUnit</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">Pytest</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">Postman</span>
+                            <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="py-20 bg-[#0f1f3a]">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4" data-animate="fade-up">
+                    Projetos <span class="text-[#4a9eff]">Destacados</span>
+                </h2>
+                <p class="text-gray-400 text-center max-w-2xl mx-auto mb-12" data-animate="fade-up" data-delay="100">
+                    Alguns dos projetos que desenvolvi, combinando tecnologia, automação e soluções orientadas a negócios.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <article class="bg-[#1a3a5c] rounded-2xl overflow-hidden border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="100">
+                        <div class="h-48 bg-gradient-to-br from-[#2d7dd2] to-[#0a1628] flex items-center justify-center text-6xl">🍽️</div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start gap-3 mb-3">
+                                <h3 class="text-xl font-bold text-white">Restaurante Aurora</h3>
+                                <span class="text-[10px] uppercase tracking-[0.12em] bg-[#2d7dd2] text-white px-3 py-1 rounded-full">Em produção</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Sistema completo de gestão de restaurante com pedidos online, reservas de mesa, integração com EMIS/vPOS e painel administrativo.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">React</span>
+                                <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">FastAPI</span>
+                                <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Docker</span>
+                                <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">EMIS/vPOS</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="https://github.com/tazbulabula/restaurante_api" target="_blank" class="text-[#4a9eff] text-sm hover:underline">Código</a>
+                                <a href="https://restaurante-frontend-umber.vercel.app" target="_blank" class="text-[#4a9eff] text-sm hover:underline">Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-[#1a3a5c] rounded-2xl overflow-hidden border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="200">
+                        <div class="h-48 bg-gradient-to-br from-[#2d7dd2] to-[#0a1628] flex items-center justify-center text-6xl">🔒</div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start gap-3 mb-3">
+                                <h3 class="text-xl font-bold text-white">Detecção de Ameaças com IA</h3>
+                                <span class="text-[10px] uppercase tracking-[0.12em] bg-[#1c6fd6] text-white px-3 py-1 rounded-full">IA & Segurança</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Sistema inteligente para detectar padrões anômalos em redes corporativas com uso de machine learning e monitoramento em tempo real.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Python</span>
+                                <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">PyTorch</span>
+                                <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">ML</span>
+                            </div>
+                            <a href="https://github.com/tazbulabula" target="_blank" class="text-[#4a9eff] text-sm hover:underline">Ver repositório</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-[#0a1628]">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex items-center justify-center gap-3 mb-4" data-animate="fade-up">
+                    <span class="text-2xl">🔒</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white text-center">Projetos <span class="text-[#4a9eff]">Corporativos</span></h2>
+                    <span class="text-2xl">🔒</span>
+                </div>
+                <p class="text-gray-400 text-center max-w-2xl mx-auto mb-4 text-sm" data-animate="fade-up" data-delay="100">
+                    Projetos desenvolvidos para organizações e instituições em ambientes de alta exigência, sob confidencialidade e compromisso de entrega.
+                </p>
+                <p class="text-[#4a9eff] text-center text-xs mb-12 uppercase tracking-[0.18em]" data-animate="fade-up" data-delay="200">
+                    Detalhes específicos não podem ser divulgados por contrato
+                </p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="bg-[#1a3a5c] p-6 rounded-2xl border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="100">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-3xl">🎓</span>
+                            <span class="text-[10px] uppercase tracking-[0.12em] bg-[#2d7dd2] text-white px-3 py-1 rounded-full">Confidencial</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Gestão de Estágios</h3>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Plataforma completa para gestão de estágios e acompanhamento acadêmico.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">React</span>
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Frontend</span>
+                        </div>
+                        <p class="text-gray-500 text-xs italic">Minha contribuição: desenvolvimento frontend completo.</p>
+                    </article>
+
+                    <article class="bg-[#1a3a5c] p-6 rounded-2xl border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="200">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-3xl">👕</span>
+                            <span class="text-[10px] uppercase tracking-[0.12em] bg-[#2d7dd2] text-white px-3 py-1 rounded-full">Confidencial</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Sistema de Lavandaria</h3>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Gestão operacional com pagamentos, controle de clientes e processos internos.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Laravel</span>
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Backend</span>
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Pagamentos</span>
+                        </div>
+                        <p class="text-gray-500 text-xs italic">Minha contribuição: backend com Laravel e integração de pagamentos.</p>
+                    </article>
+
+                    <article class="bg-[#1a3a5c] p-6 rounded-2xl border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="300">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-3xl">💊</span>
+                            <span class="text-[10px] uppercase tracking-[0.12em] bg-[#2d7dd2] text-white px-3 py-1 rounded-full">Confidencial</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Gestão de Farmácia</h3>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Sistema completo com estoque, administrativo e filas assíncronas para atendimento.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">React</span>
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Laravel</span>
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">WebSockets</span>
+                        </div>
+                        <p class="text-gray-500 text-xs italic">Minha contribuição: full stack com filas, jobs e integração de fluxo.</p>
+                    </article>
+
+                    <article class="bg-[#1a3a5c] p-6 rounded-2xl border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="400">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-3xl">💬</span>
+                            <span class="text-[10px] uppercase tracking-[0.12em] bg-[#2d7dd2] text-white px-3 py-1 rounded-full">Confidencial</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Chat Corporativo</h3>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Plataforma de comunicação in-company com sincronização em tempo real.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Laravel</span>
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">React</span>
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Tempo Real</span>
+                        </div>
+                        <p class="text-gray-500 text-xs italic">Minha contribuição: desenvolvimento full stack em ambiente corporativo.</p>
+                    </article>
+
+                    <article class="bg-[#1a3a5c] p-6 rounded-2xl border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="500">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-3xl">🏫</span>
+                            <span class="text-[10px] uppercase tracking-[0.12em] bg-[#2d7dd2] text-white px-3 py-1 rounded-full">Confidencial</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Gestão Universitária</h3>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Sistema acadêmico com relatórios, integração de pagamentos e gestão operacional.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Laravel</span>
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">React</span>
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Relatórios</span>
+                        </div>
+                        <p class="text-gray-500 text-xs italic">Minha contribuição: full stack com módulo financeiro e relatórios.</p>
+                    </article>
+
+                    <article class="bg-[#1a3a5c] p-6 rounded-2xl border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="600">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-3xl">📡</span>
+                            <span class="text-[10px] uppercase tracking-[0.12em] bg-[#2d7dd2] text-white px-3 py-1 rounded-full">Confidencial</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Infraestrutura de Redes</h3>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Suporte técnico e melhoria de rede com foco em estabilidade, segurança e disponibilidade.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">QoS</span>
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Roteamento</span>
+                            <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Segurança</span>
+                        </div>
+                        <p class="text-gray-500 text-xs italic">Minha contribuição: infraestrutura, monitoramento e otimização de redes.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia" class="py-20 bg-[#0f1f3a]">
+            <div class="max-w-6xl mx-auto px-6">
+                <span class="section-tag mx-auto mb-6 block w-fit" data-animate="fade-up">Experiência</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12" data-animate="fade-up" data-delay="100">
+                    Minha trajetória em <span class="text-[#4a9eff]">tecnologia</span>
+                </h2>
+
+                <div class="max-w-3xl mx-auto space-y-8">
+                    <div class="glass-panel rounded-2xl p-6 timeline-item" data-animate="fade-up" data-delay="200">
+                        <span class="text-[#4a9eff] font-semibold text-sm uppercase tracking-[0.12em]">2024 — Atual</span>
+                        <h3 class="text-2xl font-bold text-white mt-2">Engenheiro de Telecomunicações & Full-Stack</h3>
+                        <p class="text-gray-300 mt-3 leading-relaxed">
+                            Desenvolvendo sistemas digitais com foco em engenharia, segurança, automação e infraestrutura. Atuando entre frontend, backend, redes e integração de soluções reais para negócios e ambientes corporativos.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel rounded-2xl p-6 timeline-item" data-animate="fade-up" data-delay="300">
+                        <span class="text-[#4a9eff] font-semibold text-sm uppercase tracking-[0.12em]">2022 — 2024</span>
+                        <h3 class="text-2xl font-bold text-white mt-2">Desenvolvimento de aplicações e integrações</h3>
+                        <p class="text-gray-300 mt-3 leading-relaxed">
+                            Criação de aplicações web com Laravel, React, FastAPI e automações de processos, com foco em produtividade, escalabilidade e experiência de usuário final.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel rounded-2xl p-6 timeline-item" data-animate="fade-up" data-delay="400">
+                        <span class="text-[#4a9eff] font-semibold text-sm uppercase tracking-[0.12em]">2019 — 2022</span>
+                        <h3 class="text-2xl font-bold text-white mt-2">Infraestrutura, redes e engenharia</h3>
+                        <p class="text-gray-300 mt-3 leading-relaxed">
+                            Trabalho com roteamento, QoS, conectividade, solução de problemas e suporte técnico, conectando a visão operacional com a criação de plataformas digitais mais eficientes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="py-20 bg-[#0a1628]">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-start">
+                    <div data-animate="fade-up">
+                        <span class="section-tag">Contato</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mt-6 mb-4">
+                            Vamos construir algo <span class="text-[#4a9eff]">inovador</span> juntos?
+                        </h2>
+                        <p class="text-gray-400 max-w-xl leading-relaxed">
+                            Se você precisa de um profissional que entenda tecnologia, infraestrutura e experiência de usuário, posso ajudar com desenvolvimento, automação e soluções digitais escaláveis.
+                        </p>
+
+                        <div class="mt-8 space-y-4">
+                            <a href="mailto:tazcmanongobulabula@gmail.com" class="flex items-center gap-3 text-gray-300 hover:text-[#4a9eff] transition">
+                                <span class="social-icon"><i class="fas fa-envelope"></i></span>
+                                <span>tazcmanongobulabula@gmail.com</span>
+                            </a>
+                            <a href="https://wa.me/244921351606" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-[#4a9eff] transition">
+                                <span class="social-icon"><i class="fab fa-whatsapp"></i></span>
+                                <span>+244 921 351 606</span>
+                            </a>
+                            <a href="https://github.com/tazbulabula" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-[#4a9eff] transition">
+                                <span class="social-icon"><i class="fab fa-github"></i></span>
+                                <span>github.com/tazbulabula</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel rounded-3xl p-6 md:p-8" data-animate="fade-up" data-delay="150">
+                        <form id="contact-form" class="space-y-5">
+                            <div>
+                                <label for="name" class="block text-sm text-gray-300 mb-2">Nome</label>
+                                <input id="name" type="text" class="contact-input" placeholder="Seu nome" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm text-gray-300 mb-2">Email</label>
+                                <input id="email" type="email" class="contact-input" placeholder="seuemail@email.com" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm text-gray-300 mb-2">Mensagem</label>
+                                <textarea id="message" rows="5" class="contact-textarea" placeholder="Descreva o projeto ou a ideia..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full py-3">Enviar mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-[#1a3a5c] bg-[#071421] py-6">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+            <p>© 2026 Taz Bula-Bula. Todos os direitos reservados.</p>
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/tazbulabula" target="_blank" class="hover:text-[#4a9eff] transition">GitHub</a>
+                <a href="https://wa.me/244921351606" target="_blank" class="hover:text-[#4a9eff] transition">WhatsApp</a>
+                <a href="mailto:tazcmanongobulabula@gmail.com" class="hover:text-[#4a9eff] transition">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/js/main.js"></script>
+</body>
+</html>
