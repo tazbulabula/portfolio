@@ -1,20 +1,346 @@
 ﻿<!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio profissional de Taz Bula-Bula, Engenheiro de Telecomunicações e Full-Stack Developer.">
-    <meta name="theme-color" content="#0a1628">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio profissional de Taz Bula-Bula, Engenheiro de Telecomunicações e Full-Stack Developer." />
+    <meta name="theme-color" content="#0a1628" />
     <title>Taz Bula-Bula | Eng. Telecomunicações & Full-Stack</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="src/css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS Customizado -->
+    <style>
+        /* ============================================================ */
+        /* RESET E BASE */
+        /* ============================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a1628;
+            color: #e5e7eb;
+        }
+
+        /* ============================================================ */
+        /* SCROLLBAR */
+        /* ============================================================ */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a1628;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2d7dd2;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4a9eff;
+        }
+
+        ::selection {
+            background: #2d7dd2;
+            color: #fff;
+        }
+
+        /* ============================================================ */
+        /* ANIMAÇÕES DE ENTRADA */
+        /* ============================================================ */
+        [data-animate="fade-up"] {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        [data-animate="fade-up"].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        [data-animate="scale-in"] {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        [data-animate="scale-in"].visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        [data-delay="100"] { transition-delay: 100ms; }
+        [data-delay="200"] { transition-delay: 200ms; }
+        [data-delay="300"] { transition-delay: 300ms; }
+        [data-delay="400"] { transition-delay: 400ms; }
+        [data-delay="500"] { transition-delay: 500ms; }
+        [data-delay="600"] { transition-delay: 600ms; }
+
+        /* ============================================================ */
+        /* ANIMAÇÕES CONTÍNUAS */
+        /* ============================================================ */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 3s ease-in-out infinite;
+        }
+
+        @keyframes ping-slow {
+            0% { transform: scale(1); opacity: 0.7; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+        .animate-ping-slow {
+            animation: ping-slow 3s ease-in-out infinite;
+        }
+
+        /* ============================================================ */
+        /* TYPEWRITER */
+        /* ============================================================ */
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background: #4a9eff;
+            margin-left: 4px;
+            animation: blink 0.8s step-end infinite;
+            vertical-align: text-bottom;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* ============================================================ */
+        /* BOTÕES */
+        /* ============================================================ */
+        .btn-primary {
+            background: #2d7dd2;
+            color: #fff;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            padding: 0.75rem 2rem;
+        }
+        .btn-primary:hover {
+            background: #4a9eff;
+            transform: scale(1.04);
+            box-shadow: 0 0 30px rgba(45, 125, 210, 0.25);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #4a9eff;
+            border: 1px solid #2d7dd2;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            padding: 0.75rem 2rem;
+        }
+        .btn-secondary:hover {
+            background: rgba(45, 125, 210, 0.08);
+            transform: scale(1.04);
+        }
+
+        /* ============================================================ */
+        /* ÍCONES SOCIAIS */
+        /* ============================================================ */
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: #1a3a5c;
+            border-radius: 9999px;
+            color: #9ca3af;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .social-icon:hover {
+            color: #4a9eff;
+            background: rgba(45, 125, 210, 0.2);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* ============================================================ */
+        /* ORBS (Fundo decorativo) */
+        /* ============================================================ */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .orb-one {
+            width: 600px;
+            height: 600px;
+            background: #2d7dd2;
+            top: -200px;
+            right: -200px;
+            animation: float 12s ease-in-out infinite alternate;
+        }
+        .orb-two {
+            width: 400px;
+            height: 400px;
+            background: #4a9eff;
+            bottom: -150px;
+            left: -150px;
+            animation: float 10s ease-in-out infinite alternate-reverse;
+        }
+
+        /* ============================================================ */
+        /* GLASS PANEL */
+        /* ============================================================ */
+        .glass-panel {
+            background: rgba(26, 58, 92, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(45, 125, 210, 0.15);
+        }
+
+        /* ============================================================ */
+        /* TIMELINE */
+        /* ============================================================ */
+        .timeline-item {
+            position: relative;
+            padding-left: 24px;
+            border-left: 3px solid #2d7dd2;
+            transition: all 0.3s ease;
+        }
+        .timeline-item:hover {
+            border-left-color: #4a9eff;
+            padding-left: 28px;
+        }
+
+        /* ============================================================ */
+        /* INPUTS */
+        /* ============================================================ */
+        .contact-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: #0a1628;
+            border: 1px solid rgba(45, 125, 210, 0.25);
+            border-radius: 12px;
+            color: #fff;
+            transition: border-color 0.3s ease;
+        }
+        .contact-input:focus {
+            outline: none;
+            border-color: #2d7dd2;
+        }
+        .contact-input::placeholder {
+            color: #4b5563;
+        }
+
+        .contact-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: #0a1628;
+            border: 1px solid rgba(45, 125, 210, 0.25);
+            border-radius: 12px;
+            color: #fff;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+        .contact-textarea:focus {
+            outline: none;
+            border-color: #2d7dd2;
+        }
+        .contact-textarea::placeholder {
+            color: #4b5563;
+        }
+
+        /* ============================================================ */
+        /* CARD GLOW */
+        /* ============================================================ */
+        .card-glow {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-glow:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(45, 125, 210, 0.15);
+            border-color: #2d7dd2;
+        }
+
+        /* ============================================================ */
+        /* SECTION TAG */
+        /* ============================================================ */
+        .section-tag {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            background: #1a3a5c;
+            color: #4a9eff;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            border-radius: 9999px;
+            border: 1px solid rgba(45, 125, 210, 0.2);
+        }
+
+        /* ============================================================ */
+        /* BOTÃO BACK TO TOP */
+        /* ============================================================ */
+        #back-to-top {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        #back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* ============================================================ */
+        /* RESPONSIVE */
+        /* ============================================================ */
+        @media (max-width: 768px) {
+            [data-animate="fade-up"] {
+                transform: translateY(20px);
+            }
+            .orb-one { width: 300px; height: 300px; }
+            .orb-two { width: 200px; height: 200px; }
+        }
+    </style>
 </head>
 <body>
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0a1628]/90 backdrop-blur-sm border-b border-[#1a3a5c]">
+
+    <!-- ============================================================ -->
+    <!-- HEADER / NAVEGAÇÃO -->
+    <!-- ============================================================ -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0a1628]/90 backdrop-blur-sm border-b border-[#1a3a5c] transition-shadow duration-300">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#top" class="text-2xl font-bold text-[#4a9eff] tracking-tight">
                 TB<span class="text-white">.</span>
@@ -48,19 +374,25 @@
         </div>
     </header>
 
+    <!-- ============================================================ -->
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <!-- ============================================================ -->
     <button id="back-to-top" class="fixed bottom-8 right-8 z-50 w-12 h-12 bg-[#2d7dd2] text-white rounded-full shadow-lg shadow-[#2d7dd2]/30 hover:bg-[#4a9eff] transition-all duration-300 hover:scale-110">
         <i class="fas fa-arrow-up"></i>
     </button>
 
     <main id="top">
-        <section class="min-h-screen flex items-center bg-[#0a1628] pt-20 overflow-hidden hero-bg-gradient relative">
+        <!-- ============================================================ -->
+        <!-- HERO -->
+        <!-- ============================================================ -->
+        <section class="min-h-screen flex items-center bg-[#0a1628] pt-20 overflow-hidden relative">
             <div class="orb orb-one"></div>
             <div class="orb orb-two"></div>
 
             <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center relative z-10">
                 <div data-animate="fade-up">
-                    <span class="section-tag mb-6">Eng. Telecomunicações & Full-Stack</span>
-                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight glitch-text" data-text="Taz Bula-Bula">
+                    <span class="section-tag mb-6">Eng. Telecomunicações &amp; Full-Stack</span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
                         Taz <span class="text-[#4a9eff]">Bula-Bula</span>
                     </h1>
                     <p class="text-xl text-gray-400 mt-5 max-w-lg typewriter">
@@ -68,8 +400,8 @@
                     </p>
 
                     <div class="flex flex-wrap gap-4 mt-8">
-                        <a href="#projetos" class="btn-primary px-8 py-3">Ver Projetos</a>
-                        <a href="#contato" class="btn-secondary px-8 py-3">Contato</a>
+                        <a href="#projetos" class="btn-primary">Ver Projetos</a>
+                        <a href="#contato" class="btn-secondary">Contato</a>
                     </div>
 
                     <div class="flex gap-4 mt-8">
@@ -88,7 +420,11 @@
                 <div class="flex justify-center relative" data-animate="fade-up" data-delay="200">
                     <div class="w-72 h-72 rounded-full bg-gradient-to-br from-[#2d7dd2] via-[#4a9eff] to-[#0a1628] flex items-center justify-center border-4 border-[#2d7dd2] shadow-[0_0_40px_rgba(74,158,255,0.25)] animate-float relative overflow-hidden">
                         <div class="absolute inset-6 rounded-full border border-white/10"></div>
-                        <img src="assets/images/perfil.jpg" alt="Taz Bula-Bula" class=" w-[95%] h-[95%] object-cover rounded-full">
+                        <img 
+                            src="assets/images/perfil.jpg" 
+                            alt="Taz Bula-Bula" 
+                            class="w-[95%] h-[95%] object-cover rounded-full"
+                        />
                     </div>
                     <div class="absolute -top-4 -right-4 w-16 h-16 bg-[#2d7dd2]/20 rounded-full animate-ping-slow"></div>
                     <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-[#4a9eff]/20 rounded-full animate-pulse-slow"></div>
@@ -96,6 +432,9 @@
             </div>
         </section>
 
+        <!-- ============================================================ -->
+        <!-- SOBRE -->
+        <!-- ============================================================ -->
         <section id="sobre" class="py-20 bg-[#0f1f3a]">
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4" data-animate="fade-up">
@@ -107,7 +446,7 @@
 
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div data-animate="fade-up" data-delay="200">
-                        <h3 class="text-2xl font-bold text-white mb-4">Engenheiro & Desenvolvedor</h3>
+                        <h3 class="text-2xl font-bold text-white mb-4">Engenheiro &amp; Desenvolvedor</h3>
                         <p class="text-gray-300 leading-relaxed mb-4">
                             Sou um profissional apaixonado por tecnologia, com experiência em desenvolvimento full-stack, telecomunicações e infraestrutura de redes.
                         </p>
@@ -145,6 +484,9 @@
             </div>
         </section>
 
+        <!-- ============================================================ -->
+        <!-- HABILIDADES -->
+        <!-- ============================================================ -->
         <section id="habilidades" class="py-20 bg-[#0a1628]">
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4" data-animate="fade-up">
@@ -180,7 +522,7 @@
 
                     <div class="bg-[#1a3a5c] p-6 rounded-2xl border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="300">
                         <div class="text-4xl mb-4">☁️</div>
-                        <h3 class="text-xl font-bold text-white mb-3">DevOps & Banco</h3>
+                        <h3 class="text-xl font-bold text-white mb-3">DevOps &amp; Banco</h3>
                         <div class="flex flex-wrap gap-2">
                             <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">Docker</span>
                             <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">CI/CD</span>
@@ -212,7 +554,7 @@
 
                     <div class="bg-[#1a3a5c] p-6 rounded-2xl border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="600">
                         <div class="text-4xl mb-4">🧪</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Testes & QA</h3>
+                        <h3 class="text-xl font-bold text-white mb-3">Testes &amp; QA</h3>
                         <div class="flex flex-wrap gap-2">
                             <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">PHPUnit</span>
                             <span class="px-3 py-1 bg-[#0a1628] text-[#4a9eff] text-sm rounded-full">Pytest</span>
@@ -224,6 +566,9 @@
             </div>
         </section>
 
+        <!-- ============================================================ -->
+        <!-- PROJETOS PÚBLICOS -->
+        <!-- ============================================================ -->
         <section id="projetos" class="py-20 bg-[#0f1f3a]">
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4" data-animate="fade-up">
@@ -234,6 +579,7 @@
                 </p>
 
                 <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Projeto 1 -->
                     <article class="bg-[#1a3a5c] rounded-2xl overflow-hidden border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="100">
                         <div class="h-48 bg-gradient-to-br from-[#2d7dd2] to-[#0a1628] flex items-center justify-center text-6xl">🍽️</div>
                         <div class="p-6">
@@ -257,12 +603,13 @@
                         </div>
                     </article>
 
+                    <!-- Projeto 2 -->
                     <article class="bg-[#1a3a5c] rounded-2xl overflow-hidden border border-[#2d7dd2]/20 card-glow" data-animate="scale-in" data-delay="200">
                         <div class="h-48 bg-gradient-to-br from-[#2d7dd2] to-[#0a1628] flex items-center justify-center text-6xl">🔒</div>
                         <div class="p-6">
                             <div class="flex justify-between items-start gap-3 mb-3">
                                 <h3 class="text-xl font-bold text-white">Detecção de Ameaças com IA</h3>
-                                <span class="text-[10px] uppercase tracking-[0.12em] bg-[#1c6fd6] text-white px-3 py-1 rounded-full">IA & Segurança</span>
+                                <span class="text-[10px] uppercase tracking-[0.12em] bg-[#1c6fd6] text-white px-3 py-1 rounded-full">IA &amp; Segurança</span>
                             </div>
                             <p class="text-gray-400 text-sm mb-4 leading-relaxed">
                                 Sistema inteligente para detectar padrões anômalos em redes corporativas com uso de machine learning e monitoramento em tempo real.
@@ -279,6 +626,9 @@
             </div>
         </section>
 
+        <!-- ============================================================ -->
+        <!-- PROJETOS CONFIDENCIAIS -->
+        <!-- ============================================================ -->
         <section class="py-20 bg-[#0a1628]">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex items-center justify-center gap-3 mb-4" data-animate="fade-up">
@@ -300,9 +650,7 @@
                             <span class="text-[10px] uppercase tracking-[0.12em] bg-[#2d7dd2] text-white px-3 py-1 rounded-full">Confidencial</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">Gestão de Estágios</h3>
-                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                            Plataforma completa para gestão de estágios e acompanhamento acadêmico.
-                        </p>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">Plataforma completa para gestão de estágios e acompanhamento acadêmico.</p>
                         <div class="flex flex-wrap gap-2 mb-3">
                             <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">React</span>
                             <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Frontend</span>
@@ -316,9 +664,7 @@
                             <span class="text-[10px] uppercase tracking-[0.12em] bg-[#2d7dd2] text-white px-3 py-1 rounded-full">Confidencial</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">Sistema de Lavandaria</h3>
-                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                            Gestão operacional com pagamentos, controle de clientes e processos internos.
-                        </p>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">Gestão operacional com pagamentos, controle de clientes e processos internos.</p>
                         <div class="flex flex-wrap gap-2 mb-3">
                             <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Laravel</span>
                             <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Backend</span>
@@ -333,9 +679,7 @@
                             <span class="text-[10px] uppercase tracking-[0.12em] bg-[#2d7dd2] text-white px-3 py-1 rounded-full">Confidencial</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">Gestão de Farmácia</h3>
-                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                            Sistema completo com estoque, administrativo e filas assíncronas para atendimento.
-                        </p>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">Sistema completo com estoque, administrativo e filas assíncronas para atendimento.</p>
                         <div class="flex flex-wrap gap-2 mb-3">
                             <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">React</span>
                             <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Laravel</span>
@@ -350,9 +694,7 @@
                             <span class="text-[10px] uppercase tracking-[0.12em] bg-[#2d7dd2] text-white px-3 py-1 rounded-full">Confidencial</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">Chat Corporativo</h3>
-                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                            Plataforma de comunicação in-company com sincronização em tempo real.
-                        </p>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">Plataforma de comunicação in-company com sincronização em tempo real.</p>
                         <div class="flex flex-wrap gap-2 mb-3">
                             <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Laravel</span>
                             <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">React</span>
@@ -367,9 +709,7 @@
                             <span class="text-[10px] uppercase tracking-[0.12em] bg-[#2d7dd2] text-white px-3 py-1 rounded-full">Confidencial</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">Gestão Universitária</h3>
-                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                            Sistema acadêmico com relatórios, integração de pagamentos e gestão operacional.
-                        </p>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">Sistema acadêmico com relatórios, integração de pagamentos e gestão operacional.</p>
                         <div class="flex flex-wrap gap-2 mb-3">
                             <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Laravel</span>
                             <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">React</span>
@@ -384,9 +724,7 @@
                             <span class="text-[10px] uppercase tracking-[0.12em] bg-[#2d7dd2] text-white px-3 py-1 rounded-full">Confidencial</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">Infraestrutura de Redes</h3>
-                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                            Suporte técnico e melhoria de rede com foco em estabilidade, segurança e disponibilidade.
-                        </p>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">Suporte técnico e melhoria de rede com foco em estabilidade, segurança e disponibilidade.</p>
                         <div class="flex flex-wrap gap-2 mb-3">
                             <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">QoS</span>
                             <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">Roteamento</span>
@@ -398,6 +736,9 @@
             </div>
         </section>
 
+        <!-- ============================================================ -->
+        <!-- EXPERIÊNCIA -->
+        <!-- ============================================================ -->
         <section id="experiencia" class="py-20 bg-[#0f1f3a]">
             <div class="max-w-6xl mx-auto px-6">
                 <span class="section-tag mx-auto mb-6 block w-fit" data-animate="fade-up">Experiência</span>
@@ -408,7 +749,7 @@
                 <div class="max-w-3xl mx-auto space-y-8">
                     <div class="glass-panel rounded-2xl p-6 timeline-item" data-animate="fade-up" data-delay="200">
                         <span class="text-[#4a9eff] font-semibold text-sm uppercase tracking-[0.12em]">2024 — Atual</span>
-                        <h3 class="text-2xl font-bold text-white mt-2">Engenheiro de Telecomunicações & Full-Stack</h3>
+                        <h3 class="text-2xl font-bold text-white mt-2">Engenheiro de Telecomunicações &amp; Full-Stack</h3>
                         <p class="text-gray-300 mt-3 leading-relaxed">
                             Desenvolvendo sistemas digitais com foco em engenharia, segurança, automação e infraestrutura. Atuando entre frontend, backend, redes e integração de soluções reais para negócios e ambientes corporativos.
                         </p>
@@ -433,6 +774,9 @@
             </div>
         </section>
 
+        <!-- ============================================================ -->
+        <!-- CONTATO -->
+        <!-- ============================================================ -->
         <section id="contato" class="py-20 bg-[#0a1628]">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-start">
@@ -483,6 +827,9 @@
         </section>
     </main>
 
+    <!-- ============================================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================================ -->
     <footer class="border-t border-[#1a3a5c] bg-[#071421] py-6">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
             <p>© 2026 Taz Bula-Bula. Todos os direitos reservados.</p>
@@ -494,9 +841,172 @@
         </div>
     </footer>
 
-    <script src="src/js/main.js"></script>
-    <!-- No HEAD, substitua por -->
-    <link rel="stylesheet" href="/src/css/style.css">
+    <!-- ============================================================ -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ============================================================
+            // MENU MOBILE
+            // ============================================================
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
 
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = menuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function () {
+                        mobileMenu.classList.add('hidden');
+                        const icon = menuBtn.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // ============================================================
+            // INTERSECTION OBSERVER - REVELAR ELEMENTOS
+            // ============================================================
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+            // ============================================================
+            // TYPEWRITER
+            // ============================================================
+            const typewriterEl = document.querySelector('.typewriter');
+            if (typewriterEl) {
+                const text = typewriterEl.textContent.trim();
+                typewriterEl.textContent = '';
+                let i = 0;
+                const cursor = document.createElement('span');
+                cursor.className = 'typing-cursor';
+                typewriterEl.appendChild(cursor);
+
+                function typeWriter() {
+                    if (i < text.length) {
+                        typewriterEl.insertBefore(document.createTextNode(text.charAt(i)), cursor);
+                        i++;
+                        setTimeout(typeWriter, 35 + Math.random() * 30);
+                    }
+                }
+                setTimeout(typeWriter, 500);
+            }
+
+            // ============================================================
+            // CONTADORES ANIMADOS
+            // ============================================================
+            const counters = document.querySelectorAll('.counter');
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = Number(entry.target.dataset.target || 0);
+                        const suffix = entry.target.dataset.suffix || '';
+                        const duration = 1800;
+                        const start = performance.now();
+
+                        function animateCounter(now) {
+                            const progress = Math.min((now - start) / duration, 1);
+                            const current = Math.floor(progress * target);
+                            entry.target.textContent = current + suffix;
+                            if (progress < 1) {
+                                requestAnimationFrame(animateCounter);
+                            } else {
+                                entry.target.textContent = target + suffix;
+                            }
+                        }
+                        requestAnimationFrame(animateCounter);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => counterObserver.observe(counter));
+
+            // ============================================================
+            // HEADER SHADOW E BACK TO TOP
+            // ============================================================
+            const backToTop = document.getElementById('back-to-top');
+            const header = document.querySelector('header');
+
+            const handleScroll = () => {
+                if (header) {
+                    if (window.scrollY > 30) {
+                        header.classList.add('shadow-lg', 'shadow-[#2d7dd2]/10');
+                    } else {
+                        header.classList.remove('shadow-lg', 'shadow-[#2d7dd2]/10');
+                    }
+                }
+                if (backToTop) {
+                    backToTop.classList.toggle('visible', window.scrollY > 300);
+                }
+            };
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+
+            if (backToTop) {
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // ============================================================
+            // FORMULÁRIO DE CONTATO
+            // ============================================================
+            const form = document.getElementById('contact-form');
+            if (form) {
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    const button = form.querySelector('button[type="submit"]');
+                    const original = button.textContent;
+
+                    button.textContent = 'Enviando...';
+                    button.disabled = true;
+                    button.classList.add('opacity-80');
+
+                    setTimeout(() => {
+                        button.textContent = '✅ Mensagem enviada!';
+                        button.style.background = '#22c55e';
+                        button.disabled = false;
+                        button.classList.remove('opacity-80');
+
+                        setTimeout(() => {
+                            button.textContent = original;
+                            button.style.background = '';
+                            form.reset();
+                        }, 2500);
+                    }, 1200);
+                });
+            }
+
+            // ============================================================
+            // PREVENIR CLIQUE EM LINKS VAZIOS
+            // ============================================================
+            document.querySelectorAll('a[href="#"]').forEach(link => {
+                link.addEventListener('click', (event) => event.preventDefault());
+            });
+        });
+    </script>
 </body>
 </html>
