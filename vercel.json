@@ -1,3 +1,6 @@
 {
-    "outputDirectory": "."
+    "outputDirectory": ".",
+    "buildCommand": "",
+    "devCommand": "",
+    "installCommand": ""
 }
