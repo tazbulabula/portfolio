@@ -619,7 +619,7 @@
                                 <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">PyTorch</span>
                                 <span class="text-xs bg-[#0a1628] text-[#4a9eff] px-2 py-1 rounded-full">ML</span>
                             </div>
-                            <a href="https://github.com/tazbulabula" target="_blank" class="text-[#4a9eff] text-sm hover:underline">Ver repositório</a>
+                            <a href="https://github.com/tazbulabula/ai-anomaly-detection" target="_blank" class="text-[#4a9eff] text-sm hover:underline">Ver repositório</a>
                         </div>
                     </article>
 
@@ -852,19 +852,24 @@
 
                     <div class="glass-panel rounded-3xl p-6 md:p-8" data-animate="fade-up" data-delay="150">
                         <form id="contact-form" class="space-y-5">
+                            <div class="hidden" aria-hidden="true">
+                                <label for="website">Não preencha este campo</label>
+                                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+                            </div>
                             <div>
                                 <label for="name" class="block text-sm text-gray-300 mb-2">Nome</label>
-                                <input id="name" type="text" class="contact-input" placeholder="Seu nome" required>
+                                <input id="name" name="name" type="text" class="contact-input" placeholder="Seu nome" autocomplete="name" maxlength="120" required>
                             </div>
                             <div>
                                 <label for="email" class="block text-sm text-gray-300 mb-2">Email</label>
-                                <input id="email" type="email" class="contact-input" placeholder="seuemail@email.com" required>
+                                <input id="email" name="email" type="email" class="contact-input" placeholder="seuemail@email.com" autocomplete="email" maxlength="254" required>
                             </div>
                             <div>
                                 <label for="message" class="block text-sm text-gray-300 mb-2">Mensagem</label>
-                                <textarea id="message" rows="5" class="contact-textarea" placeholder="Descreva o projeto ou a ideia..." required></textarea>
+                                <textarea id="message" name="message" rows="5" class="contact-textarea" placeholder="Descreva o projeto ou a ideia..." maxlength="5000" required></textarea>
                             </div>
                             <button type="submit" class="btn-primary w-full py-3">Enviar mensagem</button>
+                            <p id="contact-status" class="text-sm text-gray-300" role="status" aria-live="polite"></p>
                         </form>
                     </div>
                 </div>
@@ -1020,28 +1025,47 @@
             // ============================================================
             const form = document.getElementById('contact-form');
             if (form) {
-                form.addEventListener('submit', function (event) {
+                form.addEventListener('submit', async function (event) {
                     event.preventDefault();
 
                     const button = form.querySelector('button[type="submit"]');
+                    const status = document.getElementById('contact-status');
                     const original = button.textContent;
 
                     button.textContent = 'Enviando...';
                     button.disabled = true;
                     button.classList.add('opacity-80');
+                    status.textContent = '';
 
-                    setTimeout(() => {
-                        button.textContent = '✅ Mensagem enviada!';
-                        button.style.background = '#22c55e';
+                    try {
+                        const response = await fetch('/api/contact', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                name: form.elements.name.value.trim(),
+                                email: form.elements.email.value.trim(),
+                                message: form.elements.message.value.trim(),
+                                website: form.elements.website.value
+                            })
+                        });
+
+                        if (!response.ok) {
+                            throw new Error('Não foi possível enviar sua mensagem. Tente novamente mais tarde.');
+                        }
+
+                        status.textContent = 'Mensagem enviada com sucesso. Obrigado pelo contato!';
+                        status.classList.remove('text-red-400');
+                        status.classList.add('text-green-400');
+                        form.reset();
+                    } catch (error) {
+                        status.textContent = error.message || 'Ocorreu um erro ao enviar. Verifique sua conexão e tente novamente.';
+                        status.classList.remove('text-green-400');
+                        status.classList.add('text-red-400');
+                    } finally {
+                        button.textContent = original;
                         button.disabled = false;
                         button.classList.remove('opacity-80');
-
-                        setTimeout(() => {
-                            button.textContent = original;
-                            button.style.background = '';
-                            form.reset();
-                        }, 2500);
-                    }, 1200);
+                    }
                 });
             }
 
